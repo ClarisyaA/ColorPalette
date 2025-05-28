@@ -92,6 +92,68 @@ def get_theme_css(is_dark_mode):
             border-radius: 15px;
             padding: 2rem;
         }
+
+        .color-box {
+                display: inline-block;
+                width: 120px;
+                height: 80px;
+                margin: 5px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                border: 2px solid #444;
+            }
+            
+            .color-info {
+                text-align: center;
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 5px;
+                background: rgba(50, 50, 70, 0.8);
+                color: #ffffff;
+                border-radius: 5px;
+            }
+            
+            .title {
+                text-align: center;
+                color: #ffffff;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            
+            .subtitle {
+                text-align: center;
+                color: #b0b0b0;
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .info-card {
+                background: rgba(40, 40, 60, 0.8);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .stDataFrame {
+                background: rgba(30, 30, 50, 0.9);
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #ffffff !important;
+            }
+            
+            .stMarkdown {
+                color: #ffffff;
+            }
+            
+            .theme-toggle {
+                background: rgba(40, 40, 60, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         </style>
         """
     else:
@@ -164,6 +226,60 @@ def get_theme_css(is_dark_mode):
             border-radius: 15px;
             padding: 2rem;
         }
+
+        .color-box {
+                display: inline-block;
+                width: 120px;
+                height: 80px;
+                margin: 5px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border: 2px solid white;
+            }
+            
+            .color-info {
+                text-align: center;
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 5px;
+                background: rgba(255, 255, 255, 0.8);
+                color: #2c3e50;
+                border-radius: 5px;
+            }
+            
+            .title {
+                text-align: center;
+                color: #2c3e50;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .subtitle {
+                text-align: center;
+                color: #34495e;
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .info-card {
+                background: rgba(255, 255, 255, 0.9);
+                color: #2c3e50;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #2c3e50 !important;
+            }
+            
+            .theme-toggle {
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         </style>
         """
 
