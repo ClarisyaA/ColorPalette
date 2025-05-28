@@ -21,315 +21,110 @@ st.set_page_config(
 )
 
 def get_theme_css(is_dark_mode):
-     uploader_bg = "#4b6cb7" if is_dark_mode else "#fffff"
-    
-    """Generate CSS berdasarkan mode tema"""
+    """Generate CSS untuk menyesuaikan tema Light dan Dark"""
     if is_dark_mode:
         return """
         <style>
-        /* --- GLOBAL THEME FIXES --- */
-            .stApp {
-                background-color: transparent;
-            }
-            
-            [data-testid="stFileUploader"] > div {
-                background-color: transparent !important;
-                border: 2px solid rgba(255, 255, 255, 0.2);
-                border-radius: 8px;
-                padding: 1rem;
-            }
+        .stApp {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+        }
 
-            
-            [data-testid="stFileUploader"] section {
-                background-color: var(--uploader-bg, #4b6cb7) !important;
-                color: white !important;
-                border: 2px dashed rgba(255, 255, 255, 0.3) !important;
-                border-radius: 8px;
-            }
-            
-            [data-testid="stFileUploader"] button {
-                background-color: var(--uploader-bg, #4b6cb7) !important;
-                color: white !important;
-                border: none !important;
-                border-radius: 5px;
-            }
-            
-            [data-testid="stFileUploader"] section > div {
-                color: white !important;
-            }
-            button[kind="primary"], .stButton > button {
-                background-color: #4b6cb7 !important;
-                color: white !important;
-                border: none;
-                border-radius: 5px;
-                padding: 0.5rem 1rem;
-            }
-            
-            button[kind="primary"]:hover, .stButton > button:hover {
-                background-color: #182848 !important;
-                color: white !important;
-            }
-            
-            /* Adaptasi berdasarkan theme aktif */
-            body[data-theme="light"] [data-testid="stFileUploader"] > div {
-                background-color: #ffffff !important;
-                color: #2c3e50 !important;
-                border: 2px solid rgba(0, 0, 0, 0.1);
-            }
-            
-            body[data-theme="light"] .stButton > button {
-                background-color: #e0e0e0 !important;
-                color: #2c3e50 !important;
-            }
-            .main {
-                padding-top: 2rem;
-            }
-            
-            .stApp {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-                color: #ffffff;
-            }
-            
-            /* Sidebar styling untuk dark mode */
+        [data-testid="stSidebar"] {
+            background-color: #1e1e2f !important;
+        }
 
-            .css-css-mode {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-            }
+        [data-testid="stSidebar"] * {
+            color: white !important;
+        }
 
-            [data-testid="stSidebar"] {
-                background-color: #1e1e2f !important;
-                color: #ffffff !important;
-            }
-            
-            [data-testid="stSidebar"] * {
-                color: #ffffff !important;
-            }
+        /* File uploader styling */
+        [data-testid="stFileUploader"] {
+            background-color: #2a2a40 !important;
+            border: 1px solid #555 !important;
+            border-radius: 10px;
+        }
 
-            [data-testid="stFileUploader"] {
-                background-color: #2a2a40 !important;
-                border: 1px solid #555 !important;
-                color: white !important;
-                border-radius: 10px;
-            }
-            
-            [data-testid="stFileUploader"] * {
-                color: white !important;
-            }
+        [data-testid="stFileUploader"] * {
+            color: white !important;
+        }
 
-            .css-mode .stMarkdown, 
-            .css-mode .stSelectbox label,
-            .css-mode .stSlider label,
-            .css-mode .stFileUploader label,
-            .css-mode h1, .css-mode h2, .css-mode h3, 
-            .css-mode h4, .css-mode h5, .css-mode h6 {
-                color: #ffffff !important;
-            }
-            
-            .css-mode .stButton button {
-                background: rgba(40, 40, 60, 0.8);
-                color: #ffffff;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 8px;
-            }
-            
-            .css-mode .stButton button:hover {
-                background: rgba(60, 60, 80, 0.9);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-            }
-            
-            .css-mode .stSlider > div > div > div {
-                background: rgba(40, 40, 60, 0.8) !important;
-            }
-            
-            .block-container {
-                background: rgba(30, 30, 50, 0.95);
-                border-radius: 15px;
-                padding: 2rem;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .color-box {
-                display: inline-block;
-                width: 120px;
-                height: 80px;
-                margin: 5px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-                border: 2px solid #444;
-            }
-            
-            .color-info {
-                text-align: center;
-                font-weight: bold;
-                margin-top: 5px;
-                padding: 5px;
-                background: rgba(50, 50, 70, 0.8);
-                color: #ffffff;
-                border-radius: 5px;
-            }
-            
-            .title {
-                text-align: center;
-                color: #ffffff;
-                font-size: 3rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
-            
-            .subtitle {
-                text-align: center;
-                color: #b0b0b0;
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .info-card {
-                background: rgba(40, 40, 60, 0.8);
-                color: #ffffff;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .stDataFrame {
-                background: rgba(30, 30, 50, 0.9);
-            }
-            
-            h1, h2, h3, h4, h5, h6 {
-                color: #ffffff !important;
-            }
-            
-            .stMarkdown {
-                color: #ffffff;
-            }
-            
-            .theme-toggle {
-                background: rgba(40, 40, 60, 0.8);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 10px;
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
+        /* Tombol */
+        .stButton > button {
+            background-color: #4b6cb7 !important;
+            color: white !important;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .stButton > button:hover {
+            background-color: #182848 !important;
+        }
+
+        /* Umum */
+        h1, h2, h3, h4, h5, h6, .stMarkdown {
+            color: white !important;
+        }
+
+        .block-container {
+            background-color: rgba(30, 30, 50, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+        }
         </style>
         """
     else:
         return """
         <style>
-            /* Sidebar styling untuk light mode */
-            .css-mode {
-                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-            }
+        .stApp {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+        }
 
-            [data-testid="stSidebar"] {
-                background-color: #ffffff !important;
-                color: #2c3e50 !important;
-            }
-            
-            [data-testid="stSidebar"] * {
-                color: #2c3e50 !important;
-            }
+        [data-testid="stSidebar"] {
+            background-color: #ffffff !important;
+        }
 
-            [data-testid="stFileUploader"] {
-                background-color: #ffffff !important;
-                border: 1px solid #ccc !important;
-                color: #2c3e50 !important;
-                border-radius: 10px;
-            }
-            
-            [data-testid="stFileUploader"] * {
-                color: #2c3e50 !important;
-            }
-            
-            .css-mode .stMarkdown, 
-            .css-mode .stSelectbox label,
-            .css-mode .stSlider label,
-            .css-mode .stFileUploader label,
-            .css-mode h1, .css-mode h2, .css-mode h3, 
-            .css-mode h4, .css-mode h5, .css-mode h6 {
-                color: #2c3e50 !important;
-            }
-            
-            .css-mode .stButton button {
-                background: rgba(255, 255, 255, 0.9);
-                color: #2c3e50;
-                border: 1px solid rgba(0, 0, 0, 0.2);
-                border-radius: 8px;
-            }
-            
-            .css-mode .stButton button:hover {
-                background: rgba(255, 255, 255, 1);
-                border: 1px solid rgba(0, 0, 0, 0.3);
-            }
-            
-            .css-mode .stSlider > div > div > div {
-                background: rgba(255, 255, 255, 0.9) !important;
-            }
-            
-            .block-container {
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 15px;
-                padding: 2rem;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            .color-box {
-                display: inline-block;
-                width: 120px;
-                height: 80px;
-                margin: 5px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                border: 2px solid white;
-            }
-            
-            .color-info {
-                text-align: center;
-                font-weight: bold;
-                margin-top: 5px;
-                padding: 5px;
-                background: rgba(255, 255, 255, 0.8);
-                color: #2c3e50;
-                border-radius: 5px;
-            }
-            
-            .title {
-                text-align: center;
-                color: #2c3e50;
-                font-size: 3rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            
-            .subtitle {
-                text-align: center;
-                color: #34495e;
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .info-card {
-                background: rgba(255, 255, 255, 0.9);
-                color: #2c3e50;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-            }
-            
-            h1, h2, h3, h4, h5, h6 {
-                color: #2c3e50 !important;
-            }
-            
-            .theme-toggle {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
+        [data-testid="stSidebar"] * {
+            color: #2c3e50 !important;
+        }
+
+        /* File uploader styling */
+        [data-testid="stFileUploader"] {
+            background-color: #ffffff !important;
+            border: 1px solid #ccc !important;
+            border-radius: 10px;
+        }
+
+        [data-testid="stFileUploader"] * {
+            color: #2c3e50 !important;
+        }
+
+        /* Tombol */
+        .stButton > button {
+            background-color: #e0e0e0 !important;
+            color: #2c3e50 !important;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .stButton > button:hover {
+            background-color: #d5d5d5 !important;
+        }
+
+        /* Umum */
+        h1, h2, h3, h4, h5, h6, .stMarkdown {
+            color: #2c3e50 !important;
+        }
+
+        .block-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+        }
         </style>
         """
+
 def rgb_to_hex(rgb):
     """Konversi warna dari format RGB (array) ke hex string"""
     return f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}"
