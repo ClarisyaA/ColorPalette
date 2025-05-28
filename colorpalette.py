@@ -82,7 +82,7 @@ def get_theme_css(is_dark_mode):
         }
 
         [data-testid="stSidebar"] {
-            background-color: #ffffff !important;
+            background-color: #000000 !important;
         }
 
         [data-testid="stSidebar"] * {
