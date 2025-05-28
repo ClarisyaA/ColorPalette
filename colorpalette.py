@@ -40,7 +40,7 @@ def get_theme_css(is_dark_mode):
 
         /* File uploader styling */
         [data-testid="stFileUploader"] {
-            background-color: #2a2a40 !important;
+            background-color: #ffffff !important;
             border: 1px solid #555 !important;
             border-radius: 10px;
         }
