@@ -21,207 +21,225 @@ st.set_page_config(
 )
 
 def get_theme_css(is_dark_mode):
-    """Generate CSS untuk light/dark mode dengan styling tombol uploader yang netral."""
+    """Generate CSS berdasarkan mode tema"""
     if is_dark_mode:
         return """
         <style>
-        .main { padding-top: 2rem; }
-
-        .stApp {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #ffffff;
-        }
-
-        [data-testid="stSidebar"] {
-            background-color: #1f1f2e !important;
-            color: #ffffff !important;
-        }
-
-        [data-testid="stSidebar"] span,
-        [data-testid="stSidebar"] label,
-        [data-testid="stSidebar"] .stSlider > div > div > div {
-            color: #ffffff !important;
-        }
-
-        /* Tombol file uploader */
-        section[data-testid="stFileUploader"] button {
-            background-color: rgba(120, 120, 120, 0.2) !important;
-            color: inherit !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            border-radius: 8px !important;
-            padding: 0.4rem 1rem !important;
-        }
-
-        section[data-testid="stFileUploader"] button:hover {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border-color: rgba(255, 255, 255, 0.4) !important;
-        }
-
-        section[data-testid="stFileUploader"] p {
-            color: #ccc !important;
-        }
-
-        .block-container {
-            background: rgba(30, 30, 50, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .color-box {
-            display: inline-block;
-            width: 120px;
-            height: 80px;
-            margin: 5px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            border: 2px solid #444;
-        }
-
-        .color-info {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 5px;
-            padding: 5px;
-            background: rgba(50, 50, 70, 0.8);
-            color: #ffffff;
-            border-radius: 5px;
-        }
-
-        .title {
-            text-align: center;
-            color: #ffffff;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #b0b0b0;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-card {
-            background: rgba(40, 40, 60, 0.8);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        h1, h2, h3, h4, h5, h6, .stMarkdown, label, span {
-            color: #ffffff !important;
-        }
-
-        .theme-toggle {
-            background: rgba(40, 40, 60, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+            .main {
+                padding-top: 2rem;
+            }
+            
+            .stApp {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+                color: #ffffff;
+            }
+            
+            /* Sidebar styling untuk dark mode */
+            .css-css-mode {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+            }
+            
+            .css-mode .stMarkdown, 
+            .css-mode .stSelectbox label,
+            .css-mode .stSlider label,
+            .css-mode .stFileUploader label,
+            .css-mode h1, .css-mode h2, .css-mode h3, 
+            .css-mode h4, .css-mode h5, .css-mode h6 {
+                color: #ffffff !important;
+            }
+            
+            .css-mode .stButton button {
+                background: rgba(40, 40, 60, 0.8);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+            }
+            
+            .css-mode .stButton button:hover {
+                background: rgba(60, 60, 80, 0.9);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+            
+            .css-mode .stSlider > div > div > div {
+                background: rgba(40, 40, 60, 0.8) !important;
+            }
+            
+            .block-container {
+                background: rgba(30, 30, 50, 0.95);
+                border-radius: 15px;
+                padding: 2rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .color-box {
+                display: inline-block;
+                width: 120px;
+                height: 80px;
+                margin: 5px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                border: 2px solid #444;
+            }
+            
+            .color-info {
+                text-align: center;
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 5px;
+                background: rgba(50, 50, 70, 0.8);
+                color: #ffffff;
+                border-radius: 5px;
+            }
+            
+            .title {
+                text-align: center;
+                color: #ffffff;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            
+            .subtitle {
+                text-align: center;
+                color: #b0b0b0;
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .info-card {
+                background: rgba(40, 40, 60, 0.8);
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .stDataFrame {
+                background: rgba(30, 30, 50, 0.9);
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #ffffff !important;
+            }
+            
+            .stMarkdown {
+                color: #ffffff;
+            }
+            
+            .theme-toggle {
+                background: rgba(40, 40, 60, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         </style>
         """
     else:
         return """
         <style>
-        .main { padding-top: 2rem; }
-
-        .stApp {
-            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
-            color: #2c3e50;
-        }
-
-        [data-testid="stSidebar"] {
-            background-color: #ffffff !important;
-            color: #2c3e50 !important;
-        }
-
-        [data-testid="stSidebar"] span,
-        [data-testid="stSidebar"] label,
-        [data-testid="stSidebar"] .stSlider > div > div > div {
-            color: #2c3e50 !important;
-        }
-
-        /* Tombol file uploader */
-        section[data-testid="stFileUploader"] button {
-            background-color: rgba(120, 120, 120, 0.15) !important;
-            color: inherit !important;
-            border: 1px solid rgba(0, 0, 0, 0.2) !important;
-            border-radius: 8px !important;
-            padding: 0.4rem 1rem !important;
-        }
-
-        section[data-testid="stFileUploader"] button:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: rgba(0, 0, 0, 0.3) !important;
-        }
-
-        section[data-testid="stFileUploader"] p {
-            color: #2c3e50 !important;
-        }
-
-        .block-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .color-box {
-            display: inline-block;
-            width: 120px;
-            height: 80px;
-            margin: 5px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid white;
-        }
-
-        .color-info {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 5px;
-            padding: 5px;
-            background: rgba(255, 255, 255, 0.8);
-            color: #2c3e50;
-            border-radius: 5px;
-        }
-
-        .title {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #34495e;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.9);
-            color: #2c3e50;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, h3, h4, h5, h6, .stMarkdown, label, span {
-            color: #2c3e50 !important;
-        }
-
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
+            .main {
+                padding-top: 2rem;
+            }
+            
+            .stApp {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #2c3e50;
+            }
+            
+            /* Sidebar styling untuk light mode */
+            .css-mode {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+            }
+            
+            .css-mode .stMarkdown, 
+            .css-mode .stSelectbox label,
+            .css-mode .stSlider label,
+            .css-mode .stFileUploader label,
+            .css-mode h1, .css-mode h2, .css-mode h3, 
+            .css-mode h4, .css-mode h5, .css-mode h6 {
+                color: #2c3e50 !important;
+            }
+            
+            .css-mode .stButton button {
+                background: rgba(255, 255, 255, 0.9);
+                color: #2c3e50;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+            }
+            
+            .css-mode .stButton button:hover {
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid rgba(0, 0, 0, 0.3);
+            }
+            
+            .css-mode .stSlider > div > div > div {
+                background: rgba(255, 255, 255, 0.9) !important;
+            }
+            
+            .block-container {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 15px;
+                padding: 2rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .color-box {
+                display: inline-block;
+                width: 120px;
+                height: 80px;
+                margin: 5px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border: 2px solid white;
+            }
+            
+            .color-info {
+                text-align: center;
+                font-weight: bold;
+                margin-top: 5px;
+                padding: 5px;
+                background: rgba(255, 255, 255, 0.8);
+                color: #2c3e50;
+                border-radius: 5px;
+            }
+            
+            .title {
+                text-align: center;
+                color: #2c3e50;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .subtitle {
+                text-align: center;
+                color: #34495e;
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .info-card {
+                background: rgba(255, 255, 255, 0.9);
+                color: #2c3e50;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #2c3e50 !important;
+            }
+            
+            .theme-toggle {
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
         </style>
         """
 def rgb_to_hex(rgb):
