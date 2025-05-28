@@ -444,7 +444,7 @@ def create_color_palette_image(colors, percentages, is_dark_mode=False):
     
     # Ukuran gambar
     fig_width = 12
-    fig_height = 6
+    fig_height = 10
     fig, ax = plt.subplots(1, 1, figsize=(fig_width, fig_height), facecolor=bg_color)
     ax.set_facecolor(bg_color)
     
