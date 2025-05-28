@@ -71,6 +71,25 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk dark mode */
+
+            [data-testid="stFileUploader"] section {
+                background-color: #4b6cb7 !important;  /* Sama kayak tombol */
+                color: white !important;
+                border: 2px dashed rgba(255, 255, 255, 0.3) !important;
+                border-radius: 8px;
+            }
+            
+            [data-testid="stFileUploader"] button {
+                background-color: #4b6cb7 !important;
+                color: white !important;
+                border: none !important;
+                border-radius: 5px;
+            }
+            
+            [data-testid="stFileUploader"] section > div {
+                color: white !important;
+            }
+
             .css-css-mode {
                 background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
             }
@@ -195,6 +214,24 @@ def get_theme_css(is_dark_mode):
     else:
         return """
         <style>
+        [data-testid="stFileUploader"] section {
+                background-color: #e0e0e0 !important;
+                color: #2c3e50 !important;
+                border: 2px dashed rgba(0, 0, 0, 0.2) !important;
+                border-radius: 8px;
+            }
+            
+            [data-testid="stFileUploader"] button {
+                background-color: #e0e0e0 !important;
+                color: #2c3e50 !important;
+                border: none !important;
+                border-radius: 5px;
+            }
+            
+            [data-testid="stFileUploader"] section > div {
+                color: #2c3e50 !important;
+            }
+
             .main {
                 padding-top: 2rem;
             }
