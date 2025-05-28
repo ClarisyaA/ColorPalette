@@ -25,6 +25,19 @@ def get_theme_css(is_dark_mode):
     if is_dark_mode:
         return """
         <style>
+        [data-testid="stFileUploader"] button {
+            background-color: #4b6cb7 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        [data-testid="stFileUploader"] button:hover {
+            background-color: #182848 !important;
+        }
+    
         [data-testid="stFileUploader"] section {
             background-color: #222 !important;
             border: 2px dashed #555 !important;
@@ -90,7 +103,7 @@ def get_theme_css(is_dark_mode):
         }
 
         [data-testid="stFileUploader"] section {
-            background-color: #adc7e0 !important;
+            background-color: #2c3e50 !important;
             border: 2px dashed #ccc !important;
             color: #333 !important;
         }        
@@ -105,13 +118,26 @@ def get_theme_css(is_dark_mode):
 
         /* File uploader styling */
         [data-testid="stFileUploader"] {
-            background-color: #adc7e0 !important;
+            background-color: #2c3e50 !important;
             border: 1px solid #ccc !important;
             border-radius: 10px;
         }
 
         [data-testid="stFileUploader"] * {
             color: #ffffff !important;
+        }
+
+        [data-testid="stFileUploader"] button {
+            background-color: #e0e0e0 !important;
+            color: #2c3e50 !important;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        [data-testid="stFileUploader"] button:hover {
+                background-color: #c7c7c7 !important;
         }
 
         /* Tombol */
@@ -125,6 +151,8 @@ def get_theme_css(is_dark_mode):
         .stButton > button:hover {
             background-color: #d5d5d5 !important;
         }
+
+        
 
         /* Umum */
         h1, h2, h3, h4, h5, h6, .stMarkdown {
