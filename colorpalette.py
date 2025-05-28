@@ -21,183 +21,217 @@ st.set_page_config(
 )
 
 def get_theme_css(is_dark_mode):
-    """Generate CSS untuk mengatur tema sidebar dan tampilan utama sesuai mode terang/gelap."""
+    """Generate CSS custom berdasarkan tema aktif (dark / light)."""
     if is_dark_mode:
         return """
         <style>
-            .main {
-                padding-top: 2rem;
-            }
-            .stApp {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-                color: #ffffff;
-            }
+        .main { padding-top: 2rem; }
 
-            /* Sidebar - dark mode */
-            [data-testid="stSidebar"] {
-                background-color: #1f1f2e !important;
-                color: #ffffff !important;
-            }
-            [data-testid="stSidebar"] span,
-            [data-testid="stSidebar"] label,
-            [data-testid="stSidebar"] .stSlider > div > div > div {
-                color: #ffffff !important;
-            }
+        .stApp {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+        }
 
-            .block-container {
-                background: rgba(30, 30, 50, 0.95);
-                border-radius: 15px;
-                padding: 2rem;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
+        [data-testid="stSidebar"] {
+            background-color: #1f1f2e !important;
+            color: #ffffff !important;
+        }
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] .stSlider > div > div > div {
+            color: #ffffff !important;
+        }
 
-            .color-box {
-                display: inline-block;
-                width: 120px;
-                height: 80px;
-                margin: 5px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-                border: 2px solid #444;
-            }
+        /* File Uploader */
+        [data-testid="stFileUploader"] {
+            background-color: #2c2f4a !important;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #444;
+            color: #ffffff !important;
+        }
+        [data-testid="stFileUploader"] label,
+        [data-testid="stFileUploader"] div,
+        [data-testid="stFileUploader"] span {
+            color: #ffffff !important;
+        }
+        [data-testid="stFileDropzone"] {
+            background-color: #1f1f2e !important;
+            color: #ffffff !important;
+            border: 2px dashed #555 !important;
+        }
+        [data-testid="stFileDropzone"] p {
+            color: #ffffff !important;
+        }
 
-            .color-info {
-                text-align: center;
-                font-weight: bold;
-                margin-top: 5px;
-                padding: 5px;
-                background: rgba(50, 50, 70, 0.8);
-                color: #ffffff;
-                border-radius: 5px;
-            }
+        .block-container {
+            background: rgba(30, 30, 50, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-            .title {
-                text-align: center;
-                color: #ffffff;
-                font-size: 3rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
+        .color-box {
+            display: inline-block;
+            width: 120px;
+            height: 80px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border: 2px solid #444;
+        }
 
-            .subtitle {
-                text-align: center;
-                color: #b0b0b0;
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-            }
+        .color-info {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+            padding: 5px;
+            background: rgba(50, 50, 70, 0.8);
+            color: #ffffff;
+            border-radius: 5px;
+        }
 
-            .info-card {
-                background: rgba(40, 40, 60, 0.8);
-                color: #ffffff;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
+        .title {
+            text-align: center;
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-            .stDataFrame {
-                background: rgba(30, 30, 50, 0.9);
-            }
+        .subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
 
-            h1, h2, h3, h4, h5, h6,
-            .stMarkdown, label, span {
-                color: #ffffff !important;
-            }
+        .info-card {
+            background: rgba(40, 40, 60, 0.8);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-            .theme-toggle {
-                background: rgba(40, 40, 60, 0.8);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: 10px;
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
+        h1, h2, h3, h4, h5, h6, .stMarkdown, label, span {
+            color: #ffffff !important;
+        }
+
+        .theme-toggle {
+            background: rgba(40, 40, 60, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
         </style>
         """
     else:
         return """
         <style>
-            .main {
-                padding-top: 2rem;
-            }
-            .stApp {
-                background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
-                color: #2c3e50;
-            }
+        .main { padding-top: 2rem; }
 
-            /* Sidebar - light mode */
-            [data-testid="stSidebar"] {
-                background-color: #ffffff !important;
-                color: #2c3e50 !important;
-            }
-            [data-testid="stSidebar"] span,
-            [data-testid="stSidebar"] label,
-            [data-testid="stSidebar"] .stSlider > div > div > div {
-                color: #2c3e50 !important;
-            }
+        .stApp {
+            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+            color: #2c3e50;
+        }
 
-            .block-container {
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 15px;
-                padding: 2rem;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
+        [data-testid="stSidebar"] {
+            background-color: #ffffff !important;
+            color: #2c3e50 !important;
+        }
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] .stSlider > div > div > div {
+            color: #2c3e50 !important;
+        }
 
-            .color-box {
-                display: inline-block;
-                width: 120px;
-                height: 80px;
-                margin: 5px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                border: 2px solid white;
-            }
+        /* File Uploader */
+        [data-testid="stFileUploader"] {
+            background-color: #ffffff !important;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            color: #2c3e50 !important;
+        }
+        [data-testid="stFileUploader"] label,
+        [data-testid="stFileUploader"] div,
+        [data-testid="stFileUploader"] span {
+            color: #2c3e50 !important;
+        }
+        [data-testid="stFileDropzone"] {
+            background-color: #f8f9fa !important;
+            color: #2c3e50 !important;
+            border: 2px dashed #ccc !important;
+        }
+        [data-testid="stFileDropzone"] p {
+            color: #2c3e50 !important;
+        }
 
-            .color-info {
-                text-align: center;
-                font-weight: bold;
-                margin-top: 5px;
-                padding: 5px;
-                background: rgba(255, 255, 255, 0.8);
-                color: #2c3e50;
-                border-radius: 5px;
-            }
+        .block-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-            .title {
-                text-align: center;
-                color: #2c3e50;
-                font-size: 3rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            }
+        .color-box {
+            display: inline-block;
+            width: 120px;
+            height: 80px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
+        }
 
-            .subtitle {
-                text-align: center;
-                color: #34495e;
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-            }
+        .color-info {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #2c3e50;
+            border-radius: 5px;
+        }
 
-            .info-card {
-                background: rgba(255, 255, 255, 0.9);
-                color: #2c3e50;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-            }
+        .title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-            h1, h2, h3, h4, h5, h6,
-            .stMarkdown, label, span {
-                color: #2c3e50 !important;
-            }
+        .subtitle {
+            text-align: center;
+            color: #34495e;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
 
-            .theme-toggle {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
+        .info-card {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4, h5, h6, .stMarkdown, label, span {
+            color: #2c3e50 !important;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
         </style>
         """
 
