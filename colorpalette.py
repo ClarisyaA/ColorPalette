@@ -25,6 +25,14 @@ def get_theme_css(is_dark_mode):
     if is_dark_mode:
         return """
         <style>
+        [data-testid="stFileUploader"] section {
+            background-color: #222 !important;
+            border: 2px dashed #555 !important;
+            color: white !important;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
         .stApp {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: white;
@@ -80,6 +88,12 @@ def get_theme_css(is_dark_mode):
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #000000;
         }
+
+        body[data-theme="light"] [data-testid="stFileUploader"] section {
+            background-color: #f0f0f0 !important;
+            border: 2px dashed #ccc !important;
+            color: #333 !important;
+        }        
 
         [data-testid="stSidebar"] {
             background-color: #ffffff !important;
