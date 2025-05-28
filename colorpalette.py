@@ -82,7 +82,7 @@ def get_theme_css(is_dark_mode):
         }
 
         [data-testid="stSidebar"] {
-            background-color: #ffe6e6 !important;
+            background-color: #ffffff !important;
         }
 
         [data-testid="stSidebar"] * {
@@ -91,7 +91,7 @@ def get_theme_css(is_dark_mode):
 
         /* File uploader styling */
         [data-testid="stFileUploader"] {
-            background-color: #000000 !important;
+            background-color: #ffffff !important;
             border: 1px solid #ccc !important;
             border-radius: 10px;
         }
