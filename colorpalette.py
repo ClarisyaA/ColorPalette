@@ -1,7 +1,7 @@
 # Nama         : Clarisya Adeline
 # NPM          : 140810230017
 # Tanggal Buat : 27/05/2025
-# Deskripsi    : Dominant Color Palette 
+# Deskripsi    : Dominant Color Palette dengan Light/Dark Mode
 
 import streamlit as st
 import numpy as np
@@ -35,32 +35,32 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk dark mode */
-            .css-1d391kg {
+            .css-darkmode {
                 background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
             }
             
-            .css-1d391kg .stMarkdown, 
-            .css-1d391kg .stSelectbox label,
-            .css-1d391kg .stSlider label,
-            .css-1d391kg .stFileUploader label,
-            .css-1d391kg h1, .css-1d391kg h2, .css-1d391kg h3, 
-            .css-1d391kg h4, .css-1d391kg h5, .css-1d391kg h6 {
+            .css-darkmode .stMarkdown, 
+            .css-darkmode .stSelectbox label,
+            .css-darkmode .stSlider label,
+            .css-darkmode .stFileUploader label,
+            .css-darkmode h1, .css-darkmode h2, .css-darkmode h3, 
+            .css-darkmode h4, .css-darkmode h5, .css-darkmode h6 {
                 color: #ffffff !important;
             }
             
-            .css-1d391kg .stButton button {
+            .css-darkmode .stButton button {
                 background: rgba(40, 40, 60, 0.8);
                 color: #ffffff;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 border-radius: 8px;
             }
             
-            .css-1d391kg .stButton button:hover {
+            .css-darkmode .stButton button:hover {
                 background: rgba(60, 60, 80, 0.9);
                 border: 1px solid rgba(255, 255, 255, 0.4);
             }
             
-            .css-1d391kg .stSlider > div > div > div {
+            .css-darkmode .stSlider > div > div > div {
                 background: rgba(40, 40, 60, 0.8) !important;
             }
             
@@ -149,32 +149,32 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk light mode */
-            .css-1d391kg {
+            .css-darkmode {
                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
             }
             
-            .css-1d391kg .stMarkdown, 
-            .css-1d391kg .stSelectbox label,
-            .css-1d391kg .stSlider label,
-            .css-1d391kg .stFileUploader label,
-            .css-1d391kg h1, .css-1d391kg h2, .css-1d391kg h3, 
-            .css-1d391kg h4, .css-1d391kg h5, .css-1d391kg h6 {
+            .css-darkmode .stMarkdown, 
+            .css-darkmode .stSelectbox label,
+            .css-darkmode .stSlider label,
+            .css-darkmode .stFileUploader label,
+            .css-darkmode h1, .css-darkmode h2, .css-darkmode h3, 
+            .css-darkmode h4, .css-darkmode h5, .css-darkmode h6 {
                 color: #2c3e50 !important;
             }
             
-            .css-1d391kg .stButton button {
+            .css-darkmode .stButton button {
                 background: rgba(255, 255, 255, 0.9);
                 color: #2c3e50;
                 border: 1px solid rgba(0, 0, 0, 0.2);
                 border-radius: 8px;
             }
             
-            .css-1d391kg .stButton button:hover {
+            .css-darkmode .stButton button:hover {
                 background: rgba(255, 255, 255, 1);
                 border: 1px solid rgba(0, 0, 0, 0.3);
             }
             
-            .css-1d391kg .stSlider > div > div > div {
+            .css-darkmode .stSlider > div > div > div {
                 background: rgba(255, 255, 255, 0.9) !important;
             }
             
