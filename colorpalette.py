@@ -102,7 +102,7 @@ def get_theme_css(is_dark_mode):
 
         /* Tombol */
         .stButton > button {
-            background-color: #e0e0e0 !important;
+            background-color: #8f5a5a !important;
             color: #2c3e50 !important;
             border: 1px solid rgba(0, 0, 0, 0.2);
             border-radius: 5px;
