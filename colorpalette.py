@@ -455,7 +455,7 @@ def main():
         with col_theme1:
             if st.button("☀️ Light Mode", use_container_width=True, 
                         type="primary" if not st.session_state.dark_mode else "secondary"):
-                st.session_state.dark_mode = False
+                st.session_state.dark_mode = True
                 st.rerun()
         
         with col_theme2:
