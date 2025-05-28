@@ -42,26 +42,31 @@ def get_theme_css(is_dark_mode):
             color: #ffffff !important;
         }
 
-        /* File Uploader */
+        /* FILE UPLOADER DARK MODE */
         [data-testid="stFileUploader"] {
             background-color: #2c2f4a !important;
+            border: 1px solid #555 !important;
             border-radius: 10px;
-            padding: 10px;
-            border: 1px solid #444;
+            padding: 0.5rem;
             color: #ffffff !important;
         }
-        [data-testid="stFileUploader"] label,
-        [data-testid="stFileUploader"] div,
-        [data-testid="stFileUploader"] span {
-            color: #ffffff !important;
+        [data-testid="stFileUploader"] > div:first-child {
+            background-color: #2c2f4a !important;
+            border-radius: 10px;
         }
-        [data-testid="stFileDropzone"] {
-            background-color: #1f1f2e !important;
-            color: #ffffff !important;
-            border: 2px dashed #555 !important;
+        [data-testid="stFileUploader"] button {
+            background-color: #444 !important;
+            color: #fff !important;
+            border: 1px solid #888;
+            border-radius: 8px;
         }
-        [data-testid="stFileDropzone"] p {
-            color: #ffffff !important;
+        [data-testid="stFileUploader"] button:hover {
+            background-color: #666 !important;
+            color: #fff !important;
+            border-color: #aaa;
+        }
+        [data-testid="stFileUploader"] p {
+            color: #ddd !important;
         }
 
         .block-container {
@@ -148,25 +153,30 @@ def get_theme_css(is_dark_mode):
             color: #2c3e50 !important;
         }
 
-        /* File Uploader */
+        /* FILE UPLOADER LIGHT MODE */
         [data-testid="stFileUploader"] {
             background-color: #ffffff !important;
+            border: 1px solid #ddd !important;
             border-radius: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 0.5rem;
             color: #2c3e50 !important;
         }
-        [data-testid="stFileUploader"] label,
-        [data-testid="stFileUploader"] div,
-        [data-testid="stFileUploader"] span {
-            color: #2c3e50 !important;
+        [data-testid="stFileUploader"] > div:first-child {
+            background-color: #ffffff !important;
+            border-radius: 10px;
         }
-        [data-testid="stFileDropzone"] {
-            background-color: #f8f9fa !important;
+        [data-testid="stFileUploader"] button {
+            background-color: #f1f3f5 !important;
             color: #2c3e50 !important;
-            border: 2px dashed #ccc !important;
+            border: 1px solid #bbb;
+            border-radius: 8px;
         }
-        [data-testid="stFileDropzone"] p {
+        [data-testid="stFileUploader"] button:hover {
+            background-color: #e0e0e0 !important;
+            color: #2c3e50 !important;
+            border-color: #999;
+        }
+        [data-testid="stFileUploader"] p {
             color: #2c3e50 !important;
         }
 
@@ -234,7 +244,6 @@ def get_theme_css(is_dark_mode):
         }
         </style>
         """
-
 def rgb_to_hex(rgb):
     """Konversi warna dari format RGB (array) ke hex string"""
     return f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}"
