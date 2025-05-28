@@ -21,7 +21,7 @@ st.set_page_config(
 )
 
 def get_theme_css(is_dark_mode):
-    """Generate CSS custom berdasarkan tema aktif (dark / light)."""
+    """Generate CSS untuk light/dark mode dengan styling tombol uploader yang netral."""
     if is_dark_mode:
         return """
         <style>
@@ -36,52 +36,36 @@ def get_theme_css(is_dark_mode):
             background-color: #1f1f2e !important;
             color: #ffffff !important;
         }
+
         [data-testid="stSidebar"] span,
         [data-testid="stSidebar"] label,
         [data-testid="stSidebar"] .stSlider > div > div > div {
             color: #ffffff !important;
         }
 
-        /* file uploader untuk dark mode */
-        section[data-testid="stFileUploader"] {
-            background-color: #2c2f4a !important;
-            border-radius: 12px !important;
-            padding: 0.75rem !important;
-            border: 1px solid #555 !important;
-        }
-        
-        section[data-testid="stFileUploader"] div[data-testid="stFileDropzone"] {
-            background-color: #2c2f4a !important;
-            border: 2px dashed #888 !important;
-            border-radius: 10px !important;
-            color: #fff !important;
-        }
-        
-        section[data-testid="stFileUploader"] div[data-testid="stFileDropzone"] p {
-            color: #ccc !important;
-            font-weight: 500;
-        }
-        
+        /* Tombol file uploader */
         section[data-testid="stFileUploader"] button {
-            background-color: #444 !important;
-            color: #000 !important;
-            border: 1px solid #aaa !important;
+            background-color: rgba(120, 120, 120, 0.2) !important;
+            color: inherit !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
             border-radius: 8px !important;
-        }
-        
-        section[data-testid="stFileUploader"] button:hover {
-            background-color: #666 !important;
-            color: #000 !important;
-            border-color: #ccc !important;
+            padding: 0.4rem 1rem !important;
         }
 
+        section[data-testid="stFileUploader"] button:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        section[data-testid="stFileUploader"] p {
+            color: #ccc !important;
+        }
 
         .block-container {
             background: rgba(30, 30, 50, 0.95);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -111,7 +95,6 @@ def get_theme_css(is_dark_mode):
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
@@ -154,36 +137,28 @@ def get_theme_css(is_dark_mode):
             background-color: #ffffff !important;
             color: #2c3e50 !important;
         }
+
         [data-testid="stSidebar"] span,
         [data-testid="stSidebar"] label,
         [data-testid="stSidebar"] .stSlider > div > div > div {
             color: #2c3e50 !important;
         }
 
-        /* FILE UPLOADER LIGHT MODE */
-        [data-testid="stFileUploader"] {
-            background-color: #ffffff !important;
-            border: 1px solid #ddd !important;
-            border-radius: 10px;
-            padding: 0.5rem;
-            color: #2c3e50 !important;
+        /* Tombol file uploader */
+        section[data-testid="stFileUploader"] button {
+            background-color: rgba(120, 120, 120, 0.15) !important;
+            color: inherit !important;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            border-radius: 8px !important;
+            padding: 0.4rem 1rem !important;
         }
-        [data-testid="stFileUploader"] > div:first-child {
-            background-color: #ffffff !important;
-            border-radius: 10px;
+
+        section[data-testid="stFileUploader"] button:hover {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            border-color: rgba(0, 0, 0, 0.3) !important;
         }
-        [data-testid="stFileUploader"] button {
-            background-color: #f1f3f5 !important;
-            color: #2c3e50 !important;
-            border: 1px solid #bbb;
-            border-radius: 8px;
-        }
-        [data-testid="stFileUploader"] button:hover {
-            background-color: #e0e0e0 !important;
-            color: #2c3e50 !important;
-            border-color: #999;
-        }
-        [data-testid="stFileUploader"] p {
+
+        section[data-testid="stFileUploader"] p {
             color: #2c3e50 !important;
         }
 
@@ -192,7 +167,6 @@ def get_theme_css(is_dark_mode):
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -222,7 +196,6 @@ def get_theme_css(is_dark_mode):
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .subtitle {
