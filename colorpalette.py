@@ -226,15 +226,15 @@ def get_theme_css(is_dark_mode):
             background-color: #d5d5d5 !important;
         }
 
-        body[data-theme="light"] [data-testid="stDownloadButton"] button {
-            background-color: #e0e0e0 !important;
-            color: #2c3e50 !important;
+        [data-testid="stDownloadButton"] button {
+            background-color: #ffffff !important;
+            color: #000000 !important;
             border-radius: 5px !important;
             border: 1px solid rgba(0, 0, 0, 0.1) !important;
         }
-        body[data-theme="light"] [data-testid="stDownloadButton"] button:hover {
-            background-color: #c7c7c7 !important;
-            color: #2c3e50 !important;
+        [data-testid="stDownloadButton"] button:hover {
+            background-color: #ffffff !important;
+            color: #000000 !important;
         }
 
         /* Umum */
