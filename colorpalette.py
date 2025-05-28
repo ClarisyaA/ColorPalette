@@ -42,32 +42,39 @@ def get_theme_css(is_dark_mode):
             color: #ffffff !important;
         }
 
-        /* FILE UPLOADER DARK MODE */
-        [data-testid="stFileUploader"] {
+        /* Kustom file uploader untuk dark mode - super spesifik dan tahan override */
+        section[data-testid="stFileUploader"] {
             background-color: #2c2f4a !important;
+            border-radius: 12px !important;
+            padding: 0.75rem !important;
             border: 1px solid #555 !important;
-            border-radius: 10px;
-            padding: 0.5rem;
-            color: #ffffff !important;
         }
-        [data-testid="stFileUploader"] > div:first-child {
+        
+        section[data-testid="stFileUploader"] div[data-testid="stFileDropzone"] {
             background-color: #2c2f4a !important;
-            border-radius: 10px;
+            border: 2px dashed #888 !important;
+            border-radius: 10px !important;
+            color: #fff !important;
         }
-        [data-testid="stFileUploader"] button {
+        
+        section[data-testid="stFileUploader"] div[data-testid="stFileDropzone"] p {
+            color: #ccc !important;
+            font-weight: 500;
+        }
+        
+        section[data-testid="stFileUploader"] button {
             background-color: #444 !important;
             color: #fff !important;
-            border: 1px solid #888;
-            border-radius: 8px;
+            border: 1px solid #aaa !important;
+            border-radius: 8px !important;
         }
-        [data-testid="stFileUploader"] button:hover {
+        
+        section[data-testid="stFileUploader"] button:hover {
             background-color: #666 !important;
             color: #fff !important;
-            border-color: #aaa;
+            border-color: #ccc !important;
         }
-        [data-testid="stFileUploader"] p {
-            color: #ddd !important;
-        }
+
 
         .block-container {
             background: rgba(30, 30, 50, 0.95);
