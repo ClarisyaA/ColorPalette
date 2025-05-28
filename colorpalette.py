@@ -480,7 +480,8 @@ def main():
         
         # Theme Toggle
         
-        st.markdown('<div class="theme-toggle">', unsafe_allow_html=True)
+        # st.markdown('<div class="theme-toggle">', unsafe_allow_html=True)
+        st.markdown(get_theme_css(st.session_state.dark_mode), unsafe_allow_html=True)
         st.subheader("🎭 Tema Aplikasi")
         
         col_theme1, col_theme2 = st.columns(2)
