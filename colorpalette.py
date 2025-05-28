@@ -78,7 +78,7 @@ def get_theme_css(is_dark_mode):
         <style>
         .stApp {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
+            color: #000000;
         }
 
         [data-testid="stSidebar"] {
@@ -86,7 +86,7 @@ def get_theme_css(is_dark_mode):
         }
 
         [data-testid="stSidebar"] * {
-            color: #ffffff !important;
+            color: #000000 !important;
         }
 
         /* File uploader styling */
