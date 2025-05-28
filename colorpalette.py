@@ -609,7 +609,7 @@ def main():
         # Visualisasi grafik distribusi warna
         st.markdown("---")
         st.subheader("📊 Distribusi Warna")
-        fig = create_color_palette(colors, percentages, st.session_state.dark_mode)
+        fig = create_color_palette(colors, st.session_state.dark_mode)
         st.pyplot(fig)
         
         # Tabel detail warna
