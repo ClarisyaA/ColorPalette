@@ -38,6 +38,16 @@ def get_theme_css(is_dark_mode):
             .css-css-mode {
                 background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
             }
+
+            [data-testid="stSidebar"] {
+                background-color: #1e1e2f !important;
+                color: #ffffff !important;
+            }
+            
+            [data-testid="stSidebar"] * {
+                color: #ffffff !important;
+            }
+
             
             .css-mode .stMarkdown, 
             .css-mode .stSelectbox label,
@@ -152,6 +162,16 @@ def get_theme_css(is_dark_mode):
             .css-mode {
                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
             }
+
+            [data-testid="stSidebar"] {
+                background-color: #ffffff !important;
+                color: #2c3e50 !important;
+            }
+            
+            [data-testid="stSidebar"] * {
+                color: #2c3e50 !important;
+            }
+
             
             .css-mode .stMarkdown, 
             .css-mode .stSelectbox label,
