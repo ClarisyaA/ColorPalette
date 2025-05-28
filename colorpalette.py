@@ -35,32 +35,32 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk dark mode */
-            .css-darkmode {
+            .css-mode {
                 background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
             }
             
-            .css-darkmode .stMarkdown, 
-            .css-darkmode .stSelectbox label,
-            .css-darkmode .stSlider label,
-            .css-darkmode .stFileUploader label,
-            .css-darkmode h1, .css-darkmode h2, .css-darkmode h3, 
-            .css-darkmode h4, .css-darkmode h5, .css-darkmode h6 {
+            .css-mode .stMarkdown, 
+            .css-mode .stSelectbox label,
+            .css-mode .stSlider label,
+            .css-mode .stFileUploader label,
+            .css-mode h1, .css-mode h2, .css-mode h3, 
+            .css-mode h4, .css-mode h5, .css-mode h6 {
                 color: #ffffff !important;
             }
             
-            .css-darkmode .stButton button {
+            .css-mode .stButton button {
                 background: rgba(40, 40, 60, 0.8);
                 color: #ffffff;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 border-radius: 8px;
             }
             
-            .css-darkmode .stButton button:hover {
+            .css-mode .stButton button:hover {
                 background: rgba(60, 60, 80, 0.9);
                 border: 1px solid rgba(255, 255, 255, 0.4);
             }
             
-            .css-darkmode .stSlider > div > div > div {
+            .css-mode .stSlider > div > div > div {
                 background: rgba(40, 40, 60, 0.8) !important;
             }
             
@@ -149,32 +149,32 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk light mode */
-            .css-darkmode {
+            .css-mode {
                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
             }
             
-            .css-darkmode .stMarkdown, 
-            .css-darkmode .stSelectbox label,
-            .css-darkmode .stSlider label,
-            .css-darkmode .stFileUploader label,
-            .css-darkmode h1, .css-darkmode h2, .css-darkmode h3, 
-            .css-darkmode h4, .css-darkmode h5, .css-darkmode h6 {
+            .css-mode .stMarkdown, 
+            .css-mode .stSelectbox label,
+            .css-mode .stSlider label,
+            .css-mode .stFileUploader label,
+            .css-mode h1, .css-mode h2, .css-mode h3, 
+            .css-mode h4, .css-mode h5, .css-mode h6 {
                 color: #2c3e50 !important;
             }
             
-            .css-darkmode .stButton button {
+            .css-mode .stButton button {
                 background: rgba(255, 255, 255, 0.9);
                 color: #2c3e50;
                 border: 1px solid rgba(0, 0, 0, 0.2);
                 border-radius: 8px;
             }
             
-            .css-darkmode .stButton button:hover {
+            .css-mode .stButton button:hover {
                 background: rgba(255, 255, 255, 1);
                 border: 1px solid rgba(0, 0, 0, 0.3);
             }
             
-            .css-darkmode .stSlider > div > div > div {
+            .css-mode .stSlider > div > div > div {
                 background: rgba(255, 255, 255, 0.9) !important;
             }
             
@@ -436,7 +436,7 @@ def main():
     
     # Sidebar pengaturan
     with st.sidebar:
-        st.header("⚙️ Dashboard")
+        st.markdown("⚙️ Dashboard")
         st.markdown("---")
         
         # Theme Toggle
