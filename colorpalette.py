@@ -82,6 +82,18 @@ def get_theme_css(is_dark_mode):
             background-color: #182848 !important;
         }
 
+        [data-testid="stDownloadButton"] button {
+            background-color: #4b6cb7 !important;
+            color: white !important;
+            border-radius: 5px !important;
+            border: none !important;
+            padding: 0.5rem 1rem !important;
+        }
+        [data-testid="stDownloadButton"] button:hover {
+            background-color: #182848 !important;
+            color: white !important;
+        }
+
         /* Umum */
         h1, h2, h3, h4, h5, h6, .stMarkdown {
             color: white !important;
@@ -214,7 +226,16 @@ def get_theme_css(is_dark_mode):
             background-color: #d5d5d5 !important;
         }
 
-        
+        body[data-theme="light"] [data-testid="stDownloadButton"] button {
+            background-color: #e0e0e0 !important;
+            color: #2c3e50 !important;
+            border-radius: 5px !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+        body[data-theme="light"] [data-testid="stDownloadButton"] button:hover {
+            background-color: #c7c7c7 !important;
+            color: #2c3e50 !important;
+        }
 
         /* Umum */
         h1, h2, h3, h4, h5, h6, .stMarkdown {
@@ -282,6 +303,19 @@ def get_theme_css(is_dark_mode):
             }
         </style>
         """
+def style_df(df, dark_mode):
+    if dark_mode:
+        return df.style.set_table_styles([
+            {'selector': 'thead th', 'props': [('color', 'white'), ('background-color', '#1e1e2f')]},
+            {'selector': 'tbody td', 'props': [('color', 'white'), ('background-color', '#2a2a40')]},
+            {'selector': 'tbody tr:hover', 'props': [('background-color', '#444466')]},
+        ]).set_properties(**{'border-color': '#555'})
+    else:
+        return df.style.set_table_styles([
+            {'selector': 'thead th', 'props': [('color', '#2c3e50'), ('background-color', '#e9ecef')]},
+            {'selector': 'tbody td', 'props': [('color', '#2c3e50'), ('background-color', 'white')]},
+            {'selector': 'tbody tr:hover', 'props': [('background-color', '#f0f0f0')]},
+        ]).set_properties(**{'border-color': '#ccc'})
 
 def rgb_to_hex(rgb):
     """Konversi warna dari format RGB (array) ke hex string"""
@@ -589,7 +623,7 @@ def main():
                 'Persentase': f"{percentage:.2f}%"
             })
         df = pd.DataFrame(color_data)
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(style_df(df, st.session_state.dark_mode), use_container_width=True)
         
         # Download tombol color palette dan data CSV
         st.markdown("---")
