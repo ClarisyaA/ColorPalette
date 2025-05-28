@@ -21,6 +21,8 @@ st.set_page_config(
 )
 
 def get_theme_css(is_dark_mode):
+     uploader_bg = "#4b6cb7" if is_dark_mode else "#e0e0e0"
+    
     """Generate CSS berdasarkan mode tema"""
     if is_dark_mode:
         return """
