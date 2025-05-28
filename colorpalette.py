@@ -148,7 +148,7 @@ def get_theme_css(is_dark_mode):
             }
             
             .stDataFrame {
-                background: rgba(30, 30, 50, 0.9);
+                background: rgba(75, 108, 183, 0.9);
             }
             
             h1, h2, h3, h4, h5, h6 {
