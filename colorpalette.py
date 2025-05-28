@@ -317,6 +317,28 @@ def style_df(df, dark_mode):
             {'selector': 'tbody tr:hover', 'props': [('background-color', '#f0f0f0')]},
         ]).set_properties(**{'border-color': '#ccc'})
 
+def style_df(df, is_dark_mode):
+    if is_dark_mode:
+        return df.style.set_properties(**{
+            'background-color': '#121212',  # background gelap
+            'color': 'white',                # teks putih
+            'border-color': '#333'           # border gelap
+        }).set_table_styles([
+            {'selector': 'th', 'props': [('background-color', '#222'), ('color', 'white')]},
+            {'selector': 'td', 'props': [('border-color', '#444')]},
+            {'selector': 'tr:hover', 'props': [('background-color', '#333')]},
+        ])
+    else:
+        return df.style.set_properties(**{
+            'background-color': 'white',
+            'color': 'black',
+            'border-color': '#ddd'
+        }).set_table_styles([
+            {'selector': 'th', 'props': [('background-color', '#f0f0f0'), ('color', 'black')]},
+            {'selector': 'td', 'props': [('border-color', '#ccc')]},
+            {'selector': 'tr:hover', 'props': [('background-color', '#eee')]},
+        ])
+
 def rgb_to_hex(rgb):
     """Konversi warna dari format RGB (array) ke hex string"""
     return f"#{rgb[0]:02x}{rgb[1]:02x}{rgb[2]:02x}"
