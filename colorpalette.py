@@ -91,7 +91,7 @@ def get_theme_css(is_dark_mode):
 
         /* File uploader styling */
         [data-testid="stFileUploader"] {
-            background-color: #8f5a5a !important;
+            background-color: #adc7e0 !important;
             border: 1px solid #ccc !important;
             border-radius: 10px;
         }
@@ -102,7 +102,7 @@ def get_theme_css(is_dark_mode):
 
         /* Tombol */
         .stButton > button {
-            background-color: #8f5a5a !important;
+            background-color: #adc7e0 !important;
             color: #2c3e50 !important;
             border: 1px solid rgba(0, 0, 0, 0.2);
             border-radius: 5px;
