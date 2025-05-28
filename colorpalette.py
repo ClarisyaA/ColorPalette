@@ -48,7 +48,17 @@ def get_theme_css(is_dark_mode):
                 color: #ffffff !important;
             }
 
+            [data-testid="stFileUploader"] {
+                background-color: #2a2a40 !important;
+                border: 1px solid #555 !important;
+                color: white !important;
+                border-radius: 10px;
+            }
             
+            [data-testid="stFileUploader"] * {
+                color: white !important;
+            }
+
             .css-mode .stMarkdown, 
             .css-mode .stSelectbox label,
             .css-mode .stSlider label,
@@ -172,6 +182,16 @@ def get_theme_css(is_dark_mode):
                 color: #2c3e50 !important;
             }
 
+            [data-testid="stFileUploader"] {
+                background-color: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #2c3e50 !important;
+                border-radius: 10px;
+            }
+            
+            [data-testid="stFileUploader"] * {
+                color: #2c3e50 !important;
+            }
             
             .css-mode .stMarkdown, 
             .css-mode .stSelectbox label,
