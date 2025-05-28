@@ -89,8 +89,8 @@ def get_theme_css(is_dark_mode):
             color: #000000;
         }
 
-        body[data-theme="light"] [data-testid="stFileUploader"] section {
-            background-color: #f0f0f0 !important;
+        [data-testid="stFileUploader"] section {
+            background-color: #adc7e0 !important;
             border: 2px dashed #ccc !important;
             color: #333 !important;
         }        
