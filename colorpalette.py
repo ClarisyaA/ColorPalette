@@ -149,9 +149,11 @@ def get_theme_css(is_dark_mode):
             }
             
             /* Sidebar styling untuk light mode */
-            .css-mode {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+            .css-mode
+                background-color: #ffffff !important;
+                color: #2c3e50 !important;
             }
+
             
             .css-mode .stMarkdown, 
             .css-mode .stSelectbox label,
