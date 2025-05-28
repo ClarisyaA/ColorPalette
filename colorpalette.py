@@ -533,7 +533,7 @@ def main():
         
         current_theme = "🌙 Dark Mode" if st.session_state.dark_mode else "☀️ Light Mode"
         st.markdown(f"**Tema aktif:** {current_theme}")
-        st.markdown('</div>', unsafe_allow_html=True)
+        # st.markdown('</div>', unsafe_allow_html=True)
         
         st.markdown("---")
         
