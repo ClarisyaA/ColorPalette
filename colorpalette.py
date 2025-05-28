@@ -414,9 +414,9 @@ def create_color_palette(colors, percentages, is_dark_mode=False):
     for i, (color, percentage) in enumerate(zip(colors, percentages)):
         ax.barh(0, percentage, left=x_pos, height=0.8, 
                 color=color/255, edgecolor=edge_color, linewidth=2)
-        ax.text(x_pos + percentage/2, 0, f'{percentage:.1f}%', 
-                ha='center', va='center', fontweight='bold', 
-                color='white' if sum(color) < 384 else 'black')
+        # ax.text(x_pos + percentage/2, 0, f'{percentage:.1f}%', 
+        #         ha='center', va='center', fontweight='bold', 
+        #         color='white' if sum(color) < 384 else 'black')
         x_pos += percentage
     
     ax.set_xlim(0, 100)
@@ -609,7 +609,7 @@ def main():
         # Visualisasi grafik distribusi warna
         st.markdown("---")
         st.subheader("📊 Distribusi Warna")
-        fig = create_color_palette(colors, st.session_state.dark_mode)
+        fig = create_color_palette(colors, percentages, st.session_state.dark_mode)
         st.pyplot(fig)
         
         # Tabel detail warna
