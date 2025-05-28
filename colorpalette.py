@@ -42,7 +42,7 @@ def get_theme_css(is_dark_mode):
             color: #ffffff !important;
         }
 
-        /* Kustom file uploader untuk dark mode - super spesifik dan tahan override */
+        /* file uploader untuk dark mode */
         section[data-testid="stFileUploader"] {
             background-color: #2c2f4a !important;
             border-radius: 12px !important;
@@ -64,14 +64,14 @@ def get_theme_css(is_dark_mode):
         
         section[data-testid="stFileUploader"] button {
             background-color: #444 !important;
-            color: #fff !important;
+            color: #000 !important;
             border: 1px solid #aaa !important;
             border-radius: 8px !important;
         }
         
         section[data-testid="stFileUploader"] button:hover {
             background-color: #666 !important;
-            color: #fff !important;
+            color: #000 !important;
             border-color: #ccc !important;
         }
 
@@ -455,9 +455,9 @@ def main():
         with col_theme1:
             if st.button("☀️ Light Mode", use_container_width=True, 
                         type="primary" if not st.session_state.dark_mode else "secondary"):
-                st.session_state.dark_mode = True
+                st.session_state.dark_mode = False
                 st.rerun()
-        
+                            
         with col_theme2:
             if st.button("🌙 Dark Mode", use_container_width=True,
                         type="primary" if st.session_state.dark_mode else "secondary"):
