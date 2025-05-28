@@ -25,6 +25,42 @@ def get_theme_css(is_dark_mode):
     if is_dark_mode:
         return """
         <style>
+        /* --- GLOBAL THEME FIXES --- */
+            .stApp {
+                background-color: transparent;
+            }
+            
+            [data-testid="stFileUploader"] > div {
+                background-color: transparent !important;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 1rem;
+            }
+            
+            button[kind="primary"], .stButton > button {
+                background-color: #4b6cb7 !important;
+                color: white !important;
+                border: none;
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+            }
+            
+            button[kind="primary"]:hover, .stButton > button:hover {
+                background-color: #182848 !important;
+                color: white !important;
+            }
+            
+            /* Adaptasi berdasarkan theme aktif */
+            body[data-theme="light"] [data-testid="stFileUploader"] > div {
+                background-color: #ffffff !important;
+                color: #2c3e50 !important;
+                border: 2px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            body[data-theme="light"] .stButton > button {
+                background-color: #e0e0e0 !important;
+                color: #2c3e50 !important;
+            }
             .main {
                 padding-top: 2rem;
             }
