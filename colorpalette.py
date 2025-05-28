@@ -150,7 +150,7 @@ def get_theme_css(is_dark_mode):
             
             /* Sidebar styling untuk light mode */
             .css-mode {
-                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
             }
             
             .css-mode .stMarkdown, 
@@ -436,7 +436,7 @@ def main():
     
     # Sidebar pengaturan
     with st.sidebar:
-        st.markdown("⚙️ Dashboard")
+        st.header("⚙️ Dashboard")
         st.markdown("---")
         
         # Theme Toggle
